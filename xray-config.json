@@ -8,7 +8,7 @@
       "settings": {
         "clients": [
           {
-            "id": "YOUR_UUID",
+            "id": "$_UUID",
             "alterId": 0,
             "security": "auto"
           }
