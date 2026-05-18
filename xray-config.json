@@ -8,7 +8,7 @@
       "settings": {
         "clients": [
           {
-            "id": "saeka-vm",
+            "id": "YOUR_UUID",
             "alterId": 0,
             "security": "auto"
           }
