@@ -17,26 +17,26 @@ C_HEADER="${BOLD}${LMAGENTA}"; C_ACCENT="${BOLD}${LBLUE}"; C_PLAIN="${BOLD}${WHI
 rainbow_banner() {
     clear
     echo ""
-    echo -e "${BOLD}${LRED}╔═══════════════════════════════════════════════════════════════════════════════╗${RESET}"
+    echo -e "${BOLD}${LRED}╔════════════════════════════════════════════════════════════════════════════╗${RESET}"
     echo -e "${BOLD}${LRED}║${RESET}                                                                            ${BOLD}${LRED}║${RESET}"
-    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE}██╗   ██╗███╗   ███╗███████╗███████╗███████╗${LRED}                  ${BOLD}${LRED}║${RESET}"
-    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE}██║   ██║████╗ ████║██╔════╝██╔════╝██╔════╝${LRED}                  ${BOLD}${LRED}║${RESET}"
-    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE}██║   ██║██╔████╔██║█████╗  ███████╗███████╗${LRED}                  ${BOLD}${LRED}║${RESET}"
-    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE}╚██╗ ██╔╝██║╚██╔╝██║██╔══╝  ╚════██║╚════██║${LRED}                  ${BOLD}${LRED}║${RESET}"
-    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE} ╚████╔╝ ██║ ╚═╝ ██║███████╗███████║███████║${LRED}                  ${BOLD}${LRED}║${RESET}"
-    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE}  ╚═══╝  ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝${LRED}                    ${BOLD}${LRED}║${RESET}"
+    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE}██╗   ██╗███╗   ███╗███████╗███████╗███████╗${LRED}                     ${BOLD}${LRED}║${RESET}"
+    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE}██║   ██║████╗ ████║██╔════╝██╔════╝██╔════╝${LRED}                     ${BOLD}${LRED}║${RESET}"
+    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE}██║   ██║██╔████╔██║█████╗  ███████╗███████╗${LRED}                     ${BOLD}${LRED}║${RESET}"
+    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE}╚██╗ ██╔╝██║╚██╔╝██║██╔══╝  ╚════██║╚════██║${LRED}                     ${BOLD}${LRED}║${RESET}"
+    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE} ╚████╔╝ ██║ ╚═╝ ██║███████╗███████║███████║${LRED}                     ${BOLD}${LRED}║${RESET}"
+    echo -e "${BOLD}${LRED}║${RESET}  ${BOLD}${WHITE}  ╚═══╝  ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝${LRED}                     ${BOLD}${LRED}║${RESET}"
     echo -e "${BOLD}${LRED}║${RESET}                                                                            ${BOLD}${LRED}║${RESET}"
     echo -e "${BOLD}${LRED}║${RESET}           ${BOLD}${WHITE}VMESS WS TLS DEPLOYER${RESET}                                         ${BOLD}${LRED}║${RESET}"
     echo -e "${BOLD}${LRED}║${RESET}           ${CYAN}Cloud Run Ultra-Stealth Edition${RESET}                              ${BOLD}${LRED}║${RESET}"
     echo -e "${BOLD}${LRED}║${RESET}           ${CYAN}created by prvtspyyy${RESET}                                           ${BOLD}${LRED}║${RESET}"
-    echo -e "${BOLD}${LRED}╚═══════════════════════════════════════════════════════════════════════════════╝${RESET}"
+    echo -e "${BOLD}${LRED}╚════════════════════════════════════════════════════════════════════════════╝${RESET}"
     echo ""
 }
 
 check_gcloud() {
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
     echo -e "${C_PLAIN}PROJECT & API VERIFICATION${RESET}"
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
 
     ACCOUNT=$(gcloud auth list --format="value(account)" 2>/dev/null | head -1)
     if [ -z "$ACCOUNT" ]; then
@@ -57,52 +57,52 @@ check_gcloud() {
         gcloud services enable "$api" --quiet 2>/dev/null
         echo -e "${C_SUCCESS}[✔]${RESET} ${api} enabled"
     done
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
     echo ""
 }
 
 gather_config() {
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
     echo -e "${C_PLAIN}REGION SELECTION${RESET}"
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
     echo -e " ${C_ACCENT}[1]${RESET} us-central1"
     echo -e " ${C_ACCENT}[2]${RESET} us-east1"
     echo -e " ${C_ACCENT}[3]${RESET} asia-east1"
     echo -e " ${C_ACCENT}[4]${RESET} asia-southeast1"
     echo -e " ${C_ACCENT}[5]${RESET} europe-west1"
     echo -e " ${C_ACCENT}[6]${RESET} europe-west4"
-    read -p "$(echo -e "${C_INFO}[?]${RESET} Select region [1-6] (default: us-central1): ")" REGION_CHOICE
+    read -r -p "$(echo -e "${C_INFO}[?]${RESET} Select region [1-6] (default: us-central1): ")" REGION_CHOICE
     case "${REGION_CHOICE:-1}" in
         1) REGION="us-central1" ;; 2) REGION="us-east1" ;; 3) REGION="asia-east1" ;;
         4) REGION="asia-southeast1" ;; 5) REGION="europe-west1" ;; 6) REGION="europe-west4" ;;
         *) REGION="us-central1" ;;
     esac
     echo -e "${C_SUCCESS}[✔]${RESET} Region: ${BOLD}${REGION}${RESET}"
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
     echo ""
 
-    read -p "$(echo -e "${C_INFO}[?]${RESET} Service name (default: vmess-ws): ")" SERVICE_NAME_INPUT
+    read -r -p "$(echo -e "${C_INFO}[?]${RESET} Service name (default: vmess-ws): ")" SERVICE_NAME_INPUT
     SERVICE_NAME="${SERVICE_NAME_INPUT:-vmess-ws}"
     SERVICE_NAME=$(echo "$SERVICE_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//')
     if [ -z "$SERVICE_NAME" ]; then SERVICE_NAME="vmess-ws"; fi
     echo -e "${C_SUCCESS}[✔]${RESET} Service name: ${BOLD}${SERVICE_NAME}${RESET}"
     echo ""
 
-    read -p "$(echo -e "${C_INFO}[?]${RESET} UUID (default: auto-generated): ")" UUID_INPUT
-    UUID="${UUID_INPUT:-$(cat /proc/sys/kernel/random/uuid 2>/dev/null || uuidgen 2>/dev/null || echo "$(tr -dc a-f0-9 </dev/urandom | head -c8)-$(tr -dc a-f0-9 </dev/urandom | head -c4)-4$(tr -dc a-f0-9 </dev/urandom | head -c3)-$(tr -dc a-f0-9 </dev/urandom | head -c4)-$(tr -dc a-f0-9 </dev/urandom | head -c12)")") || uuidgen)}"
+    read -r -p "$(echo -e "${C_INFO}[?]${RESET} UUID (default: auto-generated): ")" UUID_INPUT
+    UUID="${UUID_INPUT:-$(cat /proc/sys/kernel/random/uuid 2>/dev/null || uuidgen 2>/dev/null || echo "$(tr -dc a-f0-9 </dev/urandom | head -c8)-$(tr -dc a-f0-9 </dev/urandom | head -c4)-4$(tr -dc a-f0-9 </dev/urandom | head -c3)-$(tr -dc a-f0-9 </dev/urandom | head -c4)-$(tr -dc a-f0-9 </dev/urandom | head -c12)")}"
     echo -e "${C_SUCCESS}[✔]${RESET} UUID: ${BOLD}${UUID}${RESET}"
     echo ""
 
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
     echo -e "${C_PLAIN}CPU AND MEMORY SELECTION${RESET}"
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
     echo -e " ${C_ACCENT}[1]${RESET} 1 vCPU, 512Mi (free tier)"
     echo -e " ${C_ACCENT}[2]${RESET} 1 vCPU, 1Gi"
     echo -e " ${C_ACCENT}[3]${RESET} 2 vCPU, 2Gi"
     echo -e " ${C_ACCENT}[4]${RESET} 2 vCPU, 4Gi (recommended)"
     echo -e " ${C_ACCENT}[5]${RESET} 4 vCPU, 8Gi"
     echo -e " ${C_ACCENT}[6]${RESET} 4 vCPU, 16Gi"
-    read -p "$(echo -e "${C_INFO}[?]${RESET} Choose config [1-6] (default: 4): ")" CPU_RAM_CHOICE
+    read -r -p "$(echo -e "${C_INFO}[?]${RESET} Choose config [1-6] (default: 4): ")" CPU_RAM_CHOICE
     CPU_RAM_CHOICE="${CPU_RAM_CHOICE:-4}"
     case $CPU_RAM_CHOICE in
         1) CPU="1"; MEMORY="512Mi" ;; 2) CPU="1"; MEMORY="1Gi" ;;
@@ -111,24 +111,24 @@ gather_config() {
         *) CPU="2"; MEMORY="4Gi" ;;
     esac
     echo -e "${C_SUCCESS}[✔]${RESET} CPU: ${BOLD}${CPU}${RESET}, Memory: ${BOLD}${MEMORY}${RESET}"
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
     echo ""
 
-    read -p "$(echo -e "${C_INFO}[?]${RESET} Decoy domain (e.g. smart.com.ph): ")" DECOY_DOMAIN
+    read -r -p "$(echo -e "${C_INFO}[?]${RESET} Decoy domain (e.g. smart.com.ph): ")" DECOY_DOMAIN
     DECOY_DOMAIN="${DECOY_DOMAIN:-smart.com.ph}"
     echo -e "${C_SUCCESS}[✔]${RESET} Decoy domain: ${BOLD}${DECOY_DOMAIN}${RESET}"
     echo ""
 
-    read -p "$(echo -e "${C_INFO}[?]${RESET} WS path (default: /vmess-ws): ")" WS_PATH_INPUT
+    read -r -p "$(echo -e "${C_INFO}[?]${RESET} WS path (default: /vmess-ws): ")" WS_PATH_INPUT
     WS_PATH="${WS_PATH_INPUT:-/vmess-ws}"
     echo -e "${C_SUCCESS}[✔]${RESET} WS path: ${BOLD}${WS_PATH}${RESET}"
     echo ""
 }
 
 deploy() {
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
     echo -e "${C_PLAIN}VMESS DEPLOYMENT${RESET}"
-    echo -e "${C_HEADER}═══════════════════════════════════════════════════════════════════════════════${RESET}"
+    echo -e "${C_HEADER}════════════════════════════════════════════════════════════════════════════${RESET}"
 
     BUILD_DIR=$(mktemp -d)
     cd "$BUILD_DIR"
@@ -207,8 +207,6 @@ http {
             if ($http_upgrade != "websocket") {
                 return 404;
             }
-            proxy_websocket_ping on;
-            proxy_websocket_ping_interval 20s;
             proxy_pass http://127.0.0.1:10000;
             proxy_http_version 1.1;
             proxy_set_header Upgrade $http_upgrade;
@@ -216,6 +214,8 @@ http {
             proxy_set_header Host $host;
             proxy_read_timeout 86400s;
             proxy_send_timeout 86400s;
+            proxy_websocket_ping on;
+            proxy_websocket_ping_interval 20s;
             proxy_buffering off;
             proxy_request_buffering off;
             tcp_nodelay on;
@@ -224,17 +224,11 @@ http {
             proxy_busy_buffers_size 256k;
             proxy_temp_file_write_size 256k;
         }
-
-        location /health {
-            access_log off;
-            return 200 "healthy\n";
-            add_header Content-Type text/plain;
-        }
     }
 }
 NGINXEOF
-    sed -i "s#DECOY_PLACEHOLDER#${DECOY_DOMAIN}#g" nginx.conf
-    sed -i "s#VMPATH_PLACEHOLDER#${WS_PATH}#g" nginx.conf
+    sed -i "s|DECOY_PLACEHOLDER|$DECOY_DOMAIN|g" nginx.conf
+    sed -i "s|VMPATH_PLACEHOLDER|$WS_PATH|g" nginx.conf
 
     cat <<'ENTRYEOF' > entrypoint.sh
 #!/bin/sh
@@ -257,22 +251,12 @@ EXPOSE 8080
 ENTRYPOINT ["/entrypoint.sh"]
 DOCKEREOF
 
-    cat <<'DOCKERIGNORE' > .dockerignore
-.git
-.gitignore
-.env
-.env.*
-*.md
-node_modules
-__pycache__
-.DS_Store
-DOCKERIGNORE
-
     IMAGE="gcr.io/$PROJECT_ID/$SERVICE_NAME"
 
     echo -e "${C_INFO}[*]${RESET} Building container with Cloud Build..."
-    if ! gcloud builds submit --tag "$IMAGE" . --quiet 2>&1 | tail -5; then
-        echo -e "${C_ERROR}[✘]${RESET} Build failed."
+    if ! gcloud builds submit --tag "$IMAGE" . --quiet > build.log 2>&1; then
+        echo -e "${C_ERROR}[✘]${RESET} Build failed. Last 20 lines:"
+        tail -20 build.log
         cd ~; rm -rf "$BUILD_DIR"
         return 1
     fi
@@ -299,23 +283,22 @@ DOCKERIGNORE
     CLEAN_HOST=$(echo "$SERVICE_URL" | sed 's|https://||')
 
     echo ""
-    echo -e "${C_SUCCESS}╔═══════════════════════════════════════════════════════════════════════════════╗${RESET}"
+    echo -e "${C_SUCCESS}╔════════════════════════════════════════════════════════════════════════════╗${RESET}"
     echo -e "${C_SUCCESS}║${RESET}  ${BOLD}${WHITE}VMESS DEPLOYED${RESET}"
-    echo -e "${C_SUCCESS}╠═══════════════════════════════════════════════════════════════════════════════╣${RESET}"
+    echo -e "${C_SUCCESS}╠════════════════════════════════════════════════════════════════════════════╣${RESET}"
     echo -e "${C_SUCCESS}║${RESET}  ${CYAN}Address:${RESET} ${BOLD}${CLEAN_HOST}${RESET}"
     echo -e "${C_SUCCESS}║${RESET}  ${CYAN}Port:${RESET}    443"
     echo -e "${C_SUCCESS}║${RESET}  ${CYAN}UUID:${RESET}    ${BOLD}${UUID}${RESET}"
     echo -e "${C_SUCCESS}║${RESET}  ${CYAN}Path:${RESET}    ${BOLD}${WS_PATH}${RESET}"
     echo -e "${C_SUCCESS}║${RESET}  ${CYAN}Network:${RESET} ws (WebSocket), TLS: Yes"
     echo -e "${C_SUCCESS}║${RESET}  ${CYAN}Decoy:${RESET}   ${BOLD}${DECOY_DOMAIN}${RESET}"
-    echo -e "${C_SUCCESS}╚═══════════════════════════════════════════════════════════════════════════════╝${RESET}"
+    echo -e "${C_SUCCESS}╚════════════════════════════════════════════════════════════════════════════╝${RESET}"
     echo ""
-    echo "VMess URL:"
-    echo "vmess://$(echo -n "{\"v\":\"2\",\"ps\":\"${SERVICE_NAME}\",\"add\":\"${CLEAN_HOST}\",\"port\":\"443\",\"id\":\"${UUID}\",\"aid\":\"0\",\"net\":\"ws\",\"type\":\"none\",\"host\":\"${CLEAN_HOST}\",\"path\":\"${WS_PATH}\",\"tls\":\"tls\"}" | base64 -w 0)"
+    echo -e "${C_INFO}VMess URL:${RESET}"
+    echo "vmess://$(echo -n "{\"v\":\"2\",\"ps\":\"${SERVICE_NAME}\",\"add\":\"${CLEAN_HOST}\",\"port\":\"443\",\"id\":\"${UUID}\",\"aid\":\"0\",\"net\":\"ws\",\"type\":\"none\",\"host\":\"${CLEAN_HOST}\",\"path\":\"${WS_PATH}\",\"tls\":\"tls\"}" | base64 -w0)"
     echo ""
 
     cd ~; rm -rf "$BUILD_DIR"
-    return 0
 }
 
 # Run
