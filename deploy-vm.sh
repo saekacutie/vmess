@@ -225,8 +225,8 @@ http {
     }
 }
 NGINXEOF
-    sed -i "s|DECOY_PLACEHOLDER|$DECOY_DOMAIN|g" nginx.conf
-    sed -i "s|VMPATH_PLACEHOLDER|$WS_PATH|g" nginx.conf
+    sed -i "s#DECOY_PLACEHOLDER#${DECOY_DOMAIN}#g" nginx.conf
+    sed -i "s#SSPATH_PLACEHOLDER#${WS_PATH}#g" nginx.conf
 
     cat <<'ENTRYEOF' > entrypoint.sh
 #!/bin/sh
