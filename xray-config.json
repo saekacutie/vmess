@@ -1,0 +1,38 @@
+{
+  "log": {"loglevel": "none"},
+  "inbounds": [
+    {
+      "port": 10000,
+      "listen": "127.0.0.1",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "saeka-vm",
+            "alterId": 0,
+            "security": "auto"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/vmess-ws"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {"domainStrategy": "UseIPv4"},
+      "streamSettings": {
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpKeepAliveInterval": 30
+        }
+      }
+    }
+  ]
+}
