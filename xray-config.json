@@ -19,7 +19,6 @@
         "security": "none",
         "wsSettings": {
           "path": "/vmess-ws"
-          "heartbeatPeriod": 25
         }
       }
     }
