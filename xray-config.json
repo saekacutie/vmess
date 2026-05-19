@@ -1,5 +1,7 @@
 {
-  "log": {"loglevel": "none"},
+  "log": {
+    "loglevel": "warning"
+  },
   "inbounds": [
     {
       "port": 10000,
@@ -8,7 +10,7 @@
       "settings": {
         "clients": [
           {
-            "id": "$UUID",
+            "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
             "alterId": 0,
             "security": "auto"
           }
@@ -18,7 +20,10 @@
         "network": "ws",
         "security": "none",
         "wsSettings": {
-          "path": "/vmess-ws"
+          "path": "/vmess-ws",
+          "headers": {
+            "Host": "www.smart.com.ph"
+          }
         }
       }
     }
@@ -26,7 +31,9 @@
   "outbounds": [
     {
       "protocol": "freedom",
-      "settings": {"domainStrategy": "UseIPv4"},
+      "settings": {
+        "domainStrategy": "AsIs"
+      },
       "streamSettings": {
         "sockopt": {
           "tcpFastOpen": true,
